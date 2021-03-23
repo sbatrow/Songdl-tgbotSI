@@ -1,6 +1,6 @@
-# Telegram Song Download Bot ❤
+# Telegram Song Download Bot ❤ ⚡️ ⚡️ Sithum Batrow 🇱🇰⚡️⚡️
 
-## You can download any song using this bot. Can be found in telegram as [@JESongdlBot](https://t.me/JESongdlBot)
+## You can download any song using this bot. Can be found in telegram as [@sibatsongbot](https://t.me/sibatsongbot
 
 ### Deploy to Heroku 🏃‍♂
 
