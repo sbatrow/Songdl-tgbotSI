@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'songdl'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_eb523e73369948b1a3f9000b0fc8f150 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_cfbaa07a229545989be4f53918967907 }}
