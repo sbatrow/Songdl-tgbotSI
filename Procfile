@@ -1,1 +1,1 @@
-worker: python3 BATROWbot.py
+worker: python3 BATbot.py
