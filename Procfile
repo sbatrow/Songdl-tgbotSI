@@ -1,1 +1,1 @@
-worker: python3 BATbot.py
+worker: python3 Sbot.py
