@@ -96,8 +96,8 @@ async def song(client, message):
         LOGGER.error(ex)
         return ""
     os.rename(download, f"{str(user_id)}.mp3")
-    await Jebot.send_chat_action(message.chat.id, "upload_audio")
-    await Jebot.send_audio(
+    await Sbot.send_chat_action(message.chat.id, "upload_audio")
+    await Sbot.send_audio(
         chat_id=message.chat.id,
         audio=f"{str(user_id)}.mp3",
         duration=int(yt.length),
@@ -143,8 +143,8 @@ async def song(client, message):
         LOGGER.error(ex)
         return ""
     os.rename(download, f"{str(user_id)}.mp3")
-    await Jebot.send_chat_action(message.chat.id, "upload_audio")
-    await Jebot.send_audio(
+    await Sbot.send_chat_action(message.chat.id, "upload_audio")
+    await Sbot.send_audio(
         chat_id=message.chat.id,
         audio=f"{str(user_id)}.mp3",
         duration=int(yt.length),
@@ -158,7 +158,7 @@ async def song(client, message):
 @Sbot.on_message(filters.command("start"))
 async def start(client, message):
    if message.chat.type == 'private':
-       await Jebot.send_message(
+       await Sbot.send_message(
                chat_id=message.chat.id,
                text="""<b>Hey There, I'm a Song Downloader Bot
 Made by ⚡ ⚡ Sithum Batrow 🇱🇰⚡⚡ 🇱🇰
@@ -177,7 +177,7 @@ Hit help button to find out more about how to use me</b>""",
         )
    else:
 
-       await Jebot.send_message(
+       await Sbot.send_message(
                chat_id=message.chat.id,
                text="""<b>Song Downloader Online\n\n</b>""",   
                             reply_markup=InlineKeyboardMarkup(
@@ -195,14 +195,14 @@ Hit help button to find out more about how to use me</b>""",
 @Sbot.on_message(filters.command("help"))
 async def help(client, message):
     if message.chat.type == 'private':   
-        await Jebot.send_message(
+        await Sbot.send_message(
                chat_id=message.chat.id,
                text="""<b>Send a song name to download song
 ~ @Batrow_BOTs</b>""",
             reply_to_message_id=message.message_id
         )
     else:
-        await Jebot.send_message(
+        await Sbot.send_message(
                chat_id=message.chat.id,
                text="<b>Song Downloader Help\n\nEnter a song name❗\n\nExample: `/s guleba`</b>",
             reply_to_message_id=message.message_id
@@ -210,11 +210,11 @@ async def help(client, message):
         
 
 @Sbot.on_callback_query()
-async def button(Jebot, update):
+async def button(Sbot, update):
       cb_data = update.data
       if "help" in cb_data:
         await update.message.delete()
-        await help(Jebot, update.message)
+        await help(Sbot, update.message)
 
 print(
     """
