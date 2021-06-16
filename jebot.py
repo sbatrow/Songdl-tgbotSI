@@ -11,7 +11,7 @@ from ut import get_arg
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, InlineQuery, InputTextMessageContent
 
 
-Jebot = Client(
+Sbot = Client(
    "Song Downloader",
    api_id=Config.APP_ID,
    api_hash=Config.API_HASH,
@@ -51,7 +51,7 @@ class AioHttp:
  #For private messages        
  #Ignore commands
  #No bots also allowed
-@Jebot.on_message(filters.private & ~filters.bot & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))  
+@Sbot.on_message(filters.private & ~filters.bot & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))  
 #Lets Keep this Simple
 async def song(client, message):
   # Hope this will fix the args issue
@@ -110,7 +110,7 @@ async def song(client, message):
     
     
     
-@Jebot.on_message(filters.command("s"))
+@Sbot.on_message(filters.command("s"))
 async def song(client, message):
     message.chat.id
     user_id = message.from_user["id"]
@@ -155,7 +155,7 @@ async def song(client, message):
     await status.delete()
     os.remove(f"{str(user_id)}.mp3")
 
-@Jebot.on_message(filters.command("start"))
+@Sbot.on_message(filters.command("start"))
 async def start(client, message):
    if message.chat.type == 'private':
        await Jebot.send_message(
@@ -192,13 +192,13 @@ Hit help button to find out more about how to use me</b>""",
             reply_to_message_id=message.message_id
         )
 
-@Jebot.on_message(filters.command("help"))
+@Sbot.on_message(filters.command("help"))
 async def help(client, message):
     if message.chat.type == 'private':   
         await Jebot.send_message(
                chat_id=message.chat.id,
                text="""<b>Send a song name to download song
-~ @Infinity_BOTs</b>""",
+~ @Batrow_BOTs</b>""",
             reply_to_message_id=message.message_id
         )
     else:
@@ -209,7 +209,7 @@ async def help(client, message):
         )     
         
 
-@Jebot.on_callback_query()
+@Sbot.on_callback_query()
 async def button(Jebot, update):
       cb_data = update.data
       if "help" in cb_data:
